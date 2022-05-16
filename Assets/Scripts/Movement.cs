@@ -5,10 +5,13 @@ using UnityEngine;
 public class Movement : MonoBehaviour
  
 {
-    float thrustSpeed = 1000f;
+    [SerializeField] float thrustSpeed = 1000f;
     [SerializeField] float rotateSpeed = 1000f;
+    [SerializeField] AudioClip mainEngine;
+
     Rigidbody rocketRigidbody;
     AudioSource rocketThrust;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +38,11 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void ApplyThrust(float thrustThisFrame)
+    void ApplyThrust(float thrustThisFrame)
     {
         rocketRigidbody.AddRelativeForce(Vector3.up * thrustThisFrame * Time.deltaTime);
         if (!rocketThrust.isPlaying){
-             rocketThrust.Play();
+             rocketThrust.PlayOneShot(mainEngine);
         }
     }
 
@@ -55,7 +58,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void ApplyRotation(float rotationThisFrame)
+    void ApplyRotation(float rotationThisFrame)
     {
         // freezing rotation so we can manually rotate
         rocketRigidbody.freezeRotation = true;

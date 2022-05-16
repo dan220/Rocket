@@ -266,7 +266,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8397329, y: 1}
+    m_SensorSize: {x: 1.8489933, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -647,7 +647,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7375440994529581814, guid: bd7eee3fe6ae3a04cb8a20c0c1dc38e7, type: 3}
   m_PrefabInstance: {fileID: 7375440994421429801}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1788667710
+--- !u!114 &1788667724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -659,6 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857431f30a2f8fd4998d4debc1232358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 1
+  crash: {fileID: 8300000, guid: 049247b315f9efe4f9c29ca99dbdc444, type: 3}
 --- !u!1001 &890071957440872943
 PrefabInstance:
   m_ObjectHideFlags: 0
