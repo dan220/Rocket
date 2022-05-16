@@ -5,19 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    void start(){
+        
+    }
     
     private void OnCollisionEnter(Collision other) {
         switch(other.gameObject.tag){
             case "Friendly":
-                Debug.Log("Start the game");
                 break;
 
             case "Finish":
-                Debug.Log("Congratulations you've finished the level");
+                LoadNextLevel();
                 break;
 
             default:
-                Debug.Log("You have died");
                 ReloadLevel();
                 break;
         }
@@ -26,5 +27,14 @@ public class CollisionHandler : MonoBehaviour
     private void ReloadLevel(){
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    private void LoadNextLevel(){
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings){
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
