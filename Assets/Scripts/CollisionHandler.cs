@@ -9,13 +9,10 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip crash;
     [SerializeField] AudioClip success;
 
-    AudioSource crashSound;
-
-    AudioSource successSound;
+    AudioSource audioSource;
 
     void Start(){
-        crashSound = GetComponent<AudioSource>();
-        successSound = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
     
     void OnCollisionEnter(Collision other) {
@@ -34,13 +31,13 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void StartCrashSequence(){
-        crashSound.PlayOneShot(crash);
+        audioSource.PlayOneShot(crash);
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", delay);
     }
 
     void NextLevelSequence(){
-        successSound.PlayOneShot(success);
+        audioSource.PlayOneShot(success);
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", delay);
     }
