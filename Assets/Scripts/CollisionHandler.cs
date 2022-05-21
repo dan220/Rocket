@@ -7,11 +7,15 @@ public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float delay = 1f;
     [SerializeField] AudioClip crash;
+    [SerializeField] AudioClip success;
 
     AudioSource crashSound;
 
+    AudioSource successSound;
+
     void Start(){
         crashSound = GetComponent<AudioSource>();
+        successSound = GetComponent<AudioSource>();
     }
     
     void OnCollisionEnter(Collision other) {
@@ -36,6 +40,7 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void NextLevelSequence(){
+        successSound.PlayOneShot(success);
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", delay);
     }

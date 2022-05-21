@@ -266,7 +266,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8489933, y: 1}
+    m_SensorSize: {x: 2.0734463, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -661,6 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 1
   crash: {fileID: 8300000, guid: 049247b315f9efe4f9c29ca99dbdc444, type: 3}
+  success: {fileID: 8300000, guid: 877908c74872b674bb528b57fe8c9a9f, type: 3}
 --- !u!1001 &890071957440872943
 PrefabInstance:
   m_ObjectHideFlags: 0
