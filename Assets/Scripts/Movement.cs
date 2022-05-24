@@ -7,7 +7,10 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] float thrustSpeed = 1000f;
     [SerializeField] float rotateSpeed = 1000f;
+
     [SerializeField] AudioClip mainEngine;
+
+    [SerializeField] ParticleSystem mainBooster;
 
     Rigidbody rocketRigidbody;
     AudioSource rocketThrust;
@@ -30,6 +33,7 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.W))
         {
             ApplyThrust(thrustSpeed);
+            mainBooster.Play();
         }
         
         else{
