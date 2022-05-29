@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Oscillator : MonoBehaviour
@@ -19,7 +20,14 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float cycles = Time.time / period;
+        float cycles = 0;
+        try
+        {
+            cycles = Time.time / period;
+        }
+        catch (DivideByZeroException e){
+            Debug.Log("Attempted to devide by 0");
+        }
 
         const float tau = Mathf.PI * 2;
         float rawSineWave = 3 * Mathf.Sin(cycles * tau);

@@ -188,6 +188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b892f70a4d69ab145a00d7d3e2c2027d, type: 3}
+--- !u!1 &25904872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1932734725604690776, guid: e98170d68dbdbef488e5cde579e520f1, type: 3}
+  m_PrefabInstance: {fileID: 913036830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &52735157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8370455086184597886, guid: b892f70a4d69ab145a00d7d3e2c2027d, type: 3}
@@ -1112,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1932734725604690776, guid: e98170d68dbdbef488e5cde579e520f1, type: 3}
       propertyPath: m_Name
-      value: Ceiling (2)
+      value: Mover
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e98170d68dbdbef488e5cde579e520f1, type: 3}
@@ -1121,6 +1126,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 301065155369049704, guid: e98170d68dbdbef488e5cde579e520f1, type: 3}
   m_PrefabInstance: {fileID: 913036830}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &913036835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25904872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c91cf56980e30a408db2eaf062f2a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 0, z: 0}
+  period: 2
 --- !u!1 &942866438
 GameObject:
   m_ObjectHideFlags: 0
