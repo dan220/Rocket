@@ -20,15 +20,9 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float cycles = 0;
-        try
-        {
-            cycles = Time.time / period;
-        }
-        catch (DivideByZeroException e){
-            Debug.Log("Attempted to devide by 0");
-        }
-
+        if (period <= Mathf.Epsilon) { return; }
+        float cycles = Time.time / period;
+    
         const float tau = Mathf.PI * 2;
         float rawSineWave = 3 * Mathf.Sin(cycles * tau);
 
