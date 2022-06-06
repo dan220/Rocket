@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
         {
             ApplyThrust(thrustSpeed);
             mainBooster.Play();
+            Fuel.fuel--;
         }
         
         else{

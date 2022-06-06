@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class Fuel : MonoBehaviour
 {
-    public Text text;
+    Text text;
  
-    int fuel = 100;
+    static public int fuel;
+
+    void Start() {
+        fuel = 1000;
+    }
 
     void Awake()
     {

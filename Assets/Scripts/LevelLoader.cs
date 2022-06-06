@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    
+    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
     // Update is called once per frame
     void Update()
@@ -14,14 +14,25 @@ public class LevelLoader : MonoBehaviour
         {
             LoadNextLevel();
         }
+
+        if (Fuel.fuel <= 0)
+        {
+            LoadCurrentLevel();
+        }
     }
 
     void LoadNextLevel(){
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
         int nextSceneIndex = currentSceneIndex + 1;
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings){
             nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    void LoadCurrentLevel()
+    {
+        Debug.Log(currentSceneIndex);
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
