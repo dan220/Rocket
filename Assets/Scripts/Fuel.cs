@@ -35,18 +35,18 @@ public class Fuel : MonoBehaviour
         // Set Text component properties.
         text = textGO.GetComponent<Text>();
         text.font = arial;
-        text.text = "Press space key";
-        text.fontSize = 48;
-        text.alignment = TextAnchor.MiddleCenter;
+        text.fontSize = 24;
+        text.alignment = TextAnchor.UpperLeft;
 
         // Provide Text position and size using RectTransform.
         RectTransform rectTransform;
         rectTransform = text.GetComponent<RectTransform>();
-        rectTransform.localPosition = new Vector3(0, 0, 0);
-        rectTransform.sizeDelta = new Vector2(600, 200);
+        rectTransform.localPosition = new Vector3(-250, 100, 0);
+        //rectTransform.sizeDelta = new Vector2(50, 50);
     }
  
-    void Update () {
+    void Update () 
+    {
         text.text = "Fuel " + fuel.ToString();
  
     }
